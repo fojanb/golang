@@ -1,4 +1,6 @@
 package main
+
+
 func main() {
 	// cards := deck{newCards(), "Three of Diamonds"}
 	// cards = append(cards, "Ace of Soldiers")
@@ -6,11 +8,23 @@ func main() {
 	// cards.print()
 	// makan.print()
 	// newDeck()
+	// cards := newDeck()
+	// cards.print()
+	// fmt.Println("CARDS",cards)
+	// hand,remaining := deal(cards,2)
+	// hand.print()
+	// remaining.print()
+	//fmt.Println("Byte slice for Fojan : ",[]byte("Fojan"))
+	//fmt.Println(cards.toString())
+	//fmt.Println([]byte(cards.toString()))
+	// cards.saveToFile("Fojan_Golang.txt")
+	// myFile := readDeckFromFile("Fojan_Golang.txt")
+	// fmt.Println("My file is:")
+	// myFile.print()
 	cards := newDeck()
-	cards.print()
-	hand,remaining := deal(cards,2)
-	hand.print()
-	remaining.print()
+	shuffledCards := cards.shuffle(4)
+	shuffledCards.print()
+
 }
 // func newCards() string {
 // 	return "Ace of Spades"
