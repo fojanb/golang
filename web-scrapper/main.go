@@ -1,13 +1,13 @@
-package main 
- 
-import ( 
-	"encoding/csv" 
-	"github.com/gocolly/colly"
-	"os" 
+package main
+
+import (
+	"encoding/csv"
 	"fmt"
-) 
- 
-// initializing a data structure to keep the scraped data 
+	"os"
+	"github.com/gocolly/colly"
+)
+
+// initializing a data structure to keep the scraped data
 type PokemonProduct struct { 
 	url,name string 
 } 
@@ -19,19 +19,16 @@ func main() {
 	// creating a new Colly instance 
 	c := colly.NewCollector() 
  
-	// visiting the target page 
-	c.Visit("https://github.com/fojanb?tab=repositories") 
- 
 	// scraping logic 
-	c.OnHTML("li.source", func(e *colly.HTMLElement) { 
+	c.OnHTML("h3.wb-break-all", func(e *colly.HTMLElement) { 
 		pokemonProduct := PokemonProduct{} 
- 
 		pokemonProduct.url = e.ChildAttr("a", "href") 
 		pokemonProduct.name = e.ChildText("a") 
  
 		pokemonProducts = append(pokemonProducts, pokemonProduct) 
 	}) 
- 
+	// visiting the target page 
+	c.Visit("https://github.com/fojanb?tab=repositories") 
 	// opening the CSV file 
 	file, err := os.Create("products.csv") 
 	if err != nil { 
