@@ -1,1 +1,0 @@
-I scrapped my github repositories (url and name) from https://github.com/fojanb?tab=repositories
