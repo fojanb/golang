@@ -1,17 +1,10 @@
-// OO Aproach vs GO Approach
+// Multiple Returns Value
 package main
-import "fmt"
 func main(){
-	// How to declare a new slice?
-	cards := deck{"Ace of Spades",newCard()}
-	// How to add new data to an existing slice?
-	cards = append(cards,"Six of Diamonds")
-	// How to loop through a slice in GO?
-	for i,card := range cards {
-		fmt.Println(i,card)
-	}
+	cards := newDeck()
+	//cards.print()
+	hand,remains := cards.deal(4)
+	hand.print()
+	remains.print()
 
-}
-func newCard() string {
-	return "Five of Spades"
 }

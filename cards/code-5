@@ -1,0 +1,7 @@
+// OO Aproach vs GO Approach && Custom Type Declarations
+package main
+func main(){
+	cards := newDeck()
+	cards.print()
+	
+}

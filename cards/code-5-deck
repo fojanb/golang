@@ -23,14 +23,17 @@ func newDeck() deck{
 	}
 	return cards
 }
-func (d deck) deal(handSize int) (deck,deck){
-	return d[:handSize],d[handSize:]
-	// hand,remains := d[:handSize],d[handSize:]
-}
-//Or:
+// OR
 /*
-func deal(d deck , handSize int) deck{
-	return d[:handSize]
-}
-
-*/
+func newDeck() deck{
+	cards := deck{}
+	suits := []string{"Spades","Diamonds","King"}
+	vals := []string{"Ace","Two","Three"}
+	for s := range suits{
+		for v := range vals{
+			card := vals[v] +" of "+suits[s]
+			cards = append(cards,card)
+		}
+	}
+	return cards
+}*/

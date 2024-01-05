@@ -1,0 +1,14 @@
+package main
+import "fmt"
+
+//Create a type of 'deck'
+//which is a slice of string
+type deck []string
+
+// Think of print() as a method in a class
+// print() is a receiver function for type 'deck'
+func (d deck) print(){
+	for i,card := range d {
+		fmt.Println(i,card)
+	}
+}
