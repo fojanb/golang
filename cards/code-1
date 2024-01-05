@@ -1,0 +1,11 @@
+// Variable Declarations
+package main
+import "fmt"
+func main(){
+	var card string = "Ace of spades"
+	//var card = "Ace of spades"
+	//card := "Ace of spades"
+	// := use it only at very first initial not for re-assigning
+	// if you want to reassign a value to a variable use =
+	fmt.Println(card)
+}

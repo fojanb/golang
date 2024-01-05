@@ -1,4 +1,4 @@
-// OO Aproach vs GO Approach
+// Slices and For Loops
 package main
 import "fmt"
 func main(){
