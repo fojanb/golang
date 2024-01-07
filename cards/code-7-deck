@@ -3,10 +3,8 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
-	"math/rand"
 	"os"
 	"strings"
-	"time"
 )
 
 //Create a type of 'deck'
@@ -60,21 +58,5 @@ func readDeckFromFile(filename string) deck{
 		os.Exit(1)
 	}
 	return deck(strings.Split(string(bs),","))
-}
-// func (d deck) shuffle() deck{
-// 	for index := range d {
-// 		r := rand.Intn(len(d))
-// 		d[index] , d[r] = d[r] , d[index]
-// 	}
-// 	return d
-// }
-//A better approach to generate random number: seed-base
-func (d deck) shuffle() deck{
-	source := rand.NewSource(time.Now().UnixNano())
-	r := rand.New(source)
-	for index := range d {
-		newIndex := r.Intn(len(d))
-		d[index] , d[newIndex] = d[newIndex] , d[index]
-	}
-	return d
+
 }

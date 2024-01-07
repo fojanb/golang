@@ -1,12 +1,8 @@
-// Type Conversion in GO - We need this to use WriteFile function inside our application
+// Shuffle function for deck
 package main
-import "fmt"
+// import "fmt"
 func main(){
-	// var greeting string= "Hello"
-	// fmt.Println([]byte(greeting))
-	//cards := newDeck()
-	//fmt.Println(cards.toString())
-	//fmt.Println([]byte(cards.toString()))
-	//cards.saveToFile()
-	fmt.Println(readFromFile("test"))
+	cards := newDeck()
+	cards.shuffle().print()
+
 }
