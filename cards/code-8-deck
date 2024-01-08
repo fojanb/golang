@@ -47,9 +47,9 @@ func (d deck) toString() string{
 	return strings.Join([]string(d),",")
 }
 // Write File 
-func (d deck) saveDeckToFile(filename string) error{
+func (d deck) saveDeckToFile() error{
 	data := []byte(d.toString())
-	return ioutil.WriteFile(filename,data,0666)
+	return ioutil.WriteFile("test.csv",data,0666)
 }
 // Read File
 func readDeckFromFile(filename string) deck{
