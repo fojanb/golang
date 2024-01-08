@@ -1,0 +1,16 @@
+package main
+// import "fmt"
+
+func main(){
+	jim := person {
+		firstName:"Jim", 
+		lastName:"Anderson", 
+		contactInfo: contactInfo {
+			email:"fojan@gmail.com", 
+			zip:123,
+		},
+	}
+	jimPointer := &jim
+	jimPointer.updateFirstName("Makan")
+	jim.printPerson()
+}

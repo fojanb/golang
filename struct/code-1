@@ -1,0 +1,19 @@
+package main
+// import "fmt"
+
+func main(){
+	alex  := person{
+		firstName:"Alex", 
+		lastName:"Anderson", 
+		contactInfo: contactInfo {
+			email:"fojan@gmail.com", 
+			zip:123,
+		},
+	}
+	
+	//  alex.contact.email = "fojan@gmail.com"
+	alex.updateFirstName("Foj").printPerson()
+	alex.printPerson()
+	// Note that the two lines above will teach us about pointeres in GoLang
+	//  fmt.Printf("%+v",alex.updatePerson())
+}
